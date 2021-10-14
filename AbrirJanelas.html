@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+          resize: none;
+        }
+
+        #container{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #button{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+
+        
+        
+</head>
+<body>
+  
+    <div id="container">
+        <div>
+    <h3>Abrir Páginas</h3>
+    <br>
+    <label for="w3review">Links aqui:</label>
+    <br>
+    <textarea id="w3review" name="w3review" rows="8" cols="80"></textarea>
+    <br><br>
+    
+    <div id="button"><input type="button" value="Abrir Links" name="valida" onclick="loadLinks()"></div>
+    </div>
+</div>
+
+<script>
+    function loadLinks(){
+        var texto = document.getElementById("w3review").value;
+        console.log(texto);
+
+       
+
+        let arrayLinguagens = texto.split("\n");
+
+        console.log(arrayLinguagens[0]);
+        // window.open(arrayLinguagens[0]);
+
+        for(var i = 0; i < arrayLinguagens.length; i++) {
+            
+            console.log(arrayLinguagens[i]);
+            window.open(arrayLinguagens[i],'_blank');
+        }
+        
+    }
+</script>
+</body>
+</html>
